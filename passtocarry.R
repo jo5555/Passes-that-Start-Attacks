@@ -8,7 +8,10 @@ loadfonts(device = "win")
 
 Comp <- FreeCompetitions()
 Matches <- FreeMatches(Comp)
+
+#                                        Change HERE vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Matches = Matches %>% filter(competition.competition_name=="FIFA World Cup" & season.season_name=="2018")
+#                                        Change HERE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 events <- StatsBombFreeEvents(MatchesDF = Matches, Parallel = T)
 events <- allclean(events)
